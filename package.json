@@ -1,0 +1,23 @@
+{
+  "name": "bartoszswiderski_6_29122020_a",
+  "version": "1.0.0",
+  "description": "Sixth project in WebDeveloper path in OpenClassrooms.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phos23/BartoszSwiderski_6_29122020_A.git"
+  },
+  "author": "Bartosz Swiderski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phos23/BartoszSwiderski_6_29122020_A/issues"
+  },
+  "homepage": "https://github.com/phos23/BartoszSwiderski_6_29122020_A#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
