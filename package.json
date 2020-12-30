@@ -19,6 +19,7 @@
   "homepage": "https://github.com/phos23/BartoszSwiderski_6_29122020_A#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.11.9"
+    "mongoose": "^5.11.9",
+    "mongoose-unique-validator": "^2.0.3"
   }
 }
