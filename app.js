@@ -11,6 +11,39 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
 });
+
+app.use('/api/sauces', (req, res, next) => {
+    const sauces = [{
+        _id: '123',
+        userId: '1234',
+        name: 'Hot sauce',
+        manufacter: 'helmans',
+        description: 'hottest sauce avaliable on the market',
+        mainPepper: 'chilli',
+        imageUrl: 'https://www.chileseeds.co.uk/wp-content/uploads/2016/10/SweetChilliHotSauces-600x600.jpg',
+        heat: 7,
+        likes: 234,
+        dislikes: 20,
+        userLiked: [1234, 12345]
+
+    }, {
+        _id: '12',
+        userId: '12345',
+        name: 'Hotttest sauce',
+        manufacter: 'helmans',
+        description: 'hottest sauce avaliable on the market',
+        mainPepper: 'chilli',
+        imageUrl: 'https://www.chileseeds.co.uk/wp-content/uploads/2016/10/SweetChilliHotSauces-600x600.jpg',
+        heat: 10,
+        likes: 2,
+        dislikes: 1,
+        userLiked: [1234, 12345],
+        usersDisliked: [123456]
+    }];
+    res.status(200).json(sauces)
+    next();
+});
+
 app.use(bodyParser.json());
 
 app.use('/api/auth', userRoutes);
