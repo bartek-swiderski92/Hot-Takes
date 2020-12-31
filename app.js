@@ -1,6 +1,3 @@
-//MONGODB PW: 9wAytpdXHGTQ94e
-//MONGODB CONNECTION: mongodb+srv://Bartosz:<password>@cluster0.edbqm.mongodb.net/<dbname>?retryWrites=true&w=majority
-
 const express = require('express');
 const bodyParser = require('body-parser');
 

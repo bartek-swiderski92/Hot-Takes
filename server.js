@@ -1,3 +1,6 @@
+//MONGODB PW: 9wAytpdXHGTQ94e
+//MONGODB CONNECTION: mongodb+srv://Bartosz:<password>@cluster0.edbqm.mongodb.net/<dbname>?retryWrites=true&w=majority
+
 const http = require('http');
 const mongoose = require('mongoose');
 const app = require('./app');
@@ -47,6 +50,7 @@ const errorHandler = error => {
 
 
 const server = http.createServer(app);
+
 server.on('error', errorHandler);
 server.on('listening', () => {
     const address = server.address();
