@@ -12,6 +12,15 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(bodyParser.json());
+
+app.post('/api/sauces', (req, res, next) => {
+    console.log(req.body);
+    res.status(201).json({
+        message: 'Thing created successfully'
+    })
+});
+
 app.use('/api/sauces', (req, res, next) => {
     const sauces = [{
         _id: '123',
@@ -41,10 +50,8 @@ app.use('/api/sauces', (req, res, next) => {
         usersDisliked: [123456]
     }];
     res.status(200).json(sauces)
-    next();
 });
 
-app.use(bodyParser.json());
 
 app.use('/api/auth', userRoutes);
 
