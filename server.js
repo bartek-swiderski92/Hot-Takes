@@ -1,5 +1,15 @@
 const http = require('http');
+const mongoose = require('mongoose');
 const app = require('./app');
+
+mongoose.connect('mongodb+srv://Bartosz:9wAytpdXHGTQ94e@cluster0.edbqm.mongodb.net/<dbname>?retryWrites=true&w=majority')
+    .then(() => {
+        console.log('Successfully connected to MongoDB Atlas!');
+    })
+    .catch((error) => {
+        console.log('Unable to connect to MongoDB Atlas!');
+        console.error(error)
+    });
 
 const normalizePort = val => {
     const port = parseInt(val, 10);
