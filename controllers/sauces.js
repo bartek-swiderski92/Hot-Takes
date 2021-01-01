@@ -24,7 +24,8 @@ exports.getOneSauce = (req, res, next) => {
             error: error
         })
     })
-}
+};
+
 exports.addSauce = (req, res, next) => {
     req.body.sauce = JSON.parse(req.body.sauce);
     const url = req.protocol + '://' + req.get('host');
@@ -55,7 +56,7 @@ exports.addSauce = (req, res, next) => {
         console.log('Failed');
         console.log(sauce);
     });
-}
+};
 
 exports.modifySauce = (req, res, next) => {
     console.log(req.file);
@@ -85,7 +86,7 @@ exports.modifySauce = (req, res, next) => {
             heat: req.body.heat,
             userId: req.body.userId,
         };
-    }
+    };
     Sauce.updateOne({
         _id: req.params.id
     }, sauce).then(() => {
@@ -96,6 +97,28 @@ exports.modifySauce = (req, res, next) => {
         (error) => {
             res.status(400).json({
                 error: error
-            })
-        })
-}
+            });
+        });
+};
+
+exports.deleteSauce = (req, res, next) => {
+    Sauce.findOne({
+        _id: req.params.id
+    }).then((sauce) => {
+        const filename = sauce.imageUrl.split('/images/')[1];
+        fs.unlink('images/' + filename, () => {
+            Sauce.deleteOne({
+                    _id: req.params.id
+                })
+                .then(() => {
+                    res.status(200).json({
+                        message: 'Deleted!'
+                    });
+                }).catch((error) => {
+                    res.status(400).json({
+                        error: error
+                    });
+                });
+        });
+    });
+};
