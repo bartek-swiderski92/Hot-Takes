@@ -4,6 +4,17 @@ const {
     Z_FIXED
 } = require('zlib');
 
+exports.getOneSauce = (req, res, next) => {
+    Sauce.findOne({
+        _id: req.params.id
+    }).then((sauce) => {
+        res.status(200).json(sauce);
+    }).catch((error) => {
+        res.status(404).json({
+            error: error
+        })
+    })
+}
 exports.addSauce = (req, res, next) => {
     req.body.sauce = JSON.parse(req.body.sauce);
     const url = req.protocol + '://' + req.get('host');
