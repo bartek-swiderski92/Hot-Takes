@@ -36,7 +36,7 @@ const errorHandler = error => {
     const bind = typeof address === 'string' ? 'pipe ' + address : 'port: ' + port;
     switch (error.code) {
         case 'EACCES':
-            console.error(bind + ' requires elevated privileges.');
+            console.error(bind + ' requires elevated privileges');
             process.exit(1);
             break;
         case 'EADDRINUSE':
