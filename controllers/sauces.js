@@ -47,19 +47,14 @@ exports.addSauce = (req, res, next) => {
             res.status(201).json({
                 message: 'Post saved successfully!'
             })
-            console.log('success');
-            console.log(sauce);
         }).catch((error) => {
         res.status(400).json({
             error: error,
         })
-        console.log('Failed');
-        console.log(sauce);
     });
 };
 
 exports.modifySauce = (req, res, next) => {
-    console.log(req.file);
     let sauce = new Sauce({
         _id: req.params.id
     });
