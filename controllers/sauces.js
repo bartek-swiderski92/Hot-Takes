@@ -117,3 +117,27 @@ exports.deleteSauce = (req, res, next) => {
         });
     });
 };
+
+exports.modifyLike = (res, req, next) => {
+    const sauce = new Sauce({
+        _id: req.req.params.id,
+    });
+    if (res.body.like = 1) {
+        sauce.userLiked.push(res.body.userId)
+    } else if (res.body.like = -1) {
+        sauce.userDisliked.push(res.body.userId)
+    }
+    // sauce.save().then(
+    //     () => {
+    //         res.status(201).json({
+    //             message: 'Like added successfully!'
+    //         })
+    //     }).catch((error) => {
+    //     res.status(400).json({
+    //         error: error,
+    //     })
+    // });
+
+    console.log(sauce);
+    console.log(res.body);
+}
