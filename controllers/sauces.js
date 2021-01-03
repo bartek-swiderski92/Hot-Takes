@@ -126,17 +126,19 @@ exports.modifyLike = (req, res, next) => {
         const likedArray = sauce.userLiked;
         const dislikedArray = sauce.userDisliked;
         const likeValue = req.body.like;
+        const userLikeIndex = likedArray.indexOf(userId);
+        const userDislikeIndex = dislikedArray.indexOf(userId);
 
         if (likeValue === 1) {
             likedArray.push(userId)
         } else if (likeValue === -1) {
             dislikedArray.push(userId);
         } else {
-            if (likedArray.indexOf(userId) >= 0) {
-                likedArray.splice(likedArray.indexOf(userId), 1);
+            if (userLikeIndex >= 0) {
+                likedArray.splice(userLikeIndex, 1);
             }
-            if (dislikedArray.indexOf(userId) >= 0) {
-                dislikedArray.splice(dislikedArray.indexOf(userId), 1);
+            if (userDislikeIndex >= 0) {
+                dislikedArray.splice(userDislikeIndex, 1);
             }
         }
         sauce.likes = likedArray.length;
@@ -154,4 +156,4 @@ exports.modifyLike = (req, res, next) => {
                 });
             });
     })
-}
+} 
