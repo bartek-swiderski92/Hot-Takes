@@ -122,26 +122,36 @@ exports.modifyLike = (req, res, next) => {
     Sauce.findOne({
         _id: res.req.params.id,
     }, function (error, sauce) {
-        console.log(sauce.userLiked);
-        if (req.body.like === 1) {
-            sauce.userLiked.push(req.body.userId)
-        } else if (req.body.like === -1) {
-            sauce.userDisliked.push(req.body.userId)
+        const userId = req.body.userId
+        const likedArray = sauce.userLiked;
+        const dislikedArray = sauce.userDisliked;
+        const likeValue = req.body.like;
+
+        if (likeValue === 1) {
+            likedArray.push(userId)
+        } else if (likeValue === -1) {
+            dislikedArray.push(userId);
         } else {
-            sauce.userLiked.indexOf(req.body.userId).remove();
-            sauce.userDisliked.indexOf(req.body.userId).remove();
+            if (likedArray.indexOf(userId) >= 0) {
+                likedArray.splice(likedArray.indexOf(userId), 1);
+            }
+            if (dislikedArray.indexOf(userId) >= 0) {
+                dislikedArray.splice(dislikedArray.indexOf(userId), 1);
+            }
         }
-        sauce.likes = sauce.userLiked.length;
-        sauce.dislikes = sauce.usersDisliked.length;
+        sauce.likes = likedArray.length;
+        sauce.dislikes = dislikedArray.length;
         Sauce.updateOne({
             _id: res.req.params.id
         }, sauce).then(() => {
             res.status(200).json({
-                message: 'Liked successfully!'
+                message: 'Like updated successfully!'
             })
         }).catch(
             (error) => {
-                console.log(error)
-            })
+                res.status(400).json({
+                    error: error
+                });
+            });
     })
 }
