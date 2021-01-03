@@ -118,26 +118,30 @@ exports.deleteSauce = (req, res, next) => {
     });
 };
 
-exports.modifyLike = (res, req, next) => {
-    const sauce = new Sauce({
-        _id: req.req.params.id,
-    });
-    if (res.body.like = 1) {
-        sauce.userLiked.push(res.body.userId)
-    } else if (res.body.like = -1) {
-        sauce.userDisliked.push(res.body.userId)
-    }
-    // sauce.save().then(
-    //     () => {
-    //         res.status(201).json({
-    //             message: 'Like added successfully!'
-    //         })
-    //     }).catch((error) => {
-    //     res.status(400).json({
-    //         error: error,
-    //     })
-    // });
-
-    console.log(sauce);
-    console.log(res.body);
+exports.modifyLike = (req, res, next) => {
+    Sauce.findOne({
+        _id: res.req.params.id,
+    }, function (error, sauce) {
+        console.log(sauce.userLiked);
+        if (req.body.like === 1) {
+            sauce.userLiked.push(req.body.userId)
+        } else if (req.body.like === -1) {
+            sauce.userDisliked.push(req.body.userId)
+        } else {
+            sauce.userLiked.indexOf(req.body.userId).remove();
+            sauce.userDisliked.indexOf(req.body.userId).remove();
+        }
+        sauce.likes = sauce.userLiked.length;
+        sauce.dislikes = sauce.usersDisliked.length;
+        Sauce.updateOne({
+            _id: res.req.params.id
+        }, sauce).then(() => {
+            res.status(200).json({
+                message: 'Liked successfully!'
+            })
+        }).catch(
+            (error) => {
+                console.log(error)
+            })
+    })
 }
