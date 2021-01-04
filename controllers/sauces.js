@@ -136,8 +136,7 @@ exports.modifyLike = (req, res, next) => {
         } else {
             if (userLikeIndex >= 0) {
                 likedArray.splice(userLikeIndex, 1);
-            }
-            if (userDislikeIndex >= 0) {
+            } else if (userDislikeIndex >= 0) {
                 dislikedArray.splice(userDislikeIndex, 1);
             }
         }
@@ -156,4 +155,4 @@ exports.modifyLike = (req, res, next) => {
                 });
             });
     })
-} 
+}
