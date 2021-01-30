@@ -27,20 +27,16 @@ exports.getOneSauce = (req, res, next) => {
 };
 
 exports.addSauce = (req, res, next) => {
-    req.body.sauce = JSON.parse(req.body.sauce);
+    const sauceObject = JSON.parse(req.body.sauce);
     const url = req.protocol + '://' + req.get('host');
     const sauce = new Sauce({
-        name: req.body.sauce.name,
-        manufacturer: req.body.sauce.manufacturer,
-        description: req.body.sauce.description,
-        mainPepper: req.body.sauce.mainPepper,
+        name: sauceObject.name,
+        manufacturer: sauceObject.manufacturer,
+        description: sauceObject.description,
+        mainPepper: sauceObject.mainPepper,
         imageUrl: url + '/images/' + req.file.filename,
-        heat: req.body.sauce.heat,
-        userId: req.body.sauce.userId,
-        likes: 0,
-        dislikes: 0,
-        usersLiked: [],
-        usersDisliked: []
+        heat: sausauceObjectce.heat,
+        userId: sauceObject.userId,
     });
     sauce.save().then(
         () => {
@@ -119,6 +115,8 @@ exports.deleteSauce = (req, res, next) => {
 };
 
 exports.modifyLike = (req, res, next) => {
+    //TODO: console.log(req.params);
+
     Sauce.findOne({
         _id: res.req.params.id,
     }, function (error, sauce) {
