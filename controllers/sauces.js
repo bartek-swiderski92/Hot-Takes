@@ -35,7 +35,7 @@ exports.addSauce = (req, res, next) => {
         description: sauceObject.description,
         mainPepper: sauceObject.mainPepper,
         imageUrl: url + '/images/' + req.file.filename,
-        heat: sausauceObjectce.heat,
+        heat: sauceObject.heat,
         userId: sauceObject.userId,
     });
     sauce.save().then(
@@ -55,17 +55,17 @@ exports.modifySauce = (req, res, next) => {
         _id: req.params.id
     });
     if (req.file) {
-        req.body.sauce = JSON.parse(req.body.sauce);
+        const sauceObject = JSON.parse(req.body.sauce);
         const url = req.protocol + '://' + req.get('host');
         sauce = {
             _id: req.params.id,
-            name: req.body.sauce.name,
-            manufacturer: req.body.sauce.manufacturer,
-            description: req.body.sauce.description,
-            mainPepper: req.body.sauce.mainPepper,
+            name: sauceObject.name,
+            manufacturer: sauceObject.manufacturer,
+            description: sauceObject.description,
+            mainPepper: sauceObject.mainPepper,
             imageUrl: url + '/images/' + req.file.filename,
-            heat: req.body.sauce.heat,
-            userId: req.body.sauce.userId,
+            heat: sauceObject.heat,
+            userId: sauceObject.userId,
         }
     } else {
         sauce = {
