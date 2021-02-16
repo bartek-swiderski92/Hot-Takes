@@ -19,7 +19,6 @@ A secure API for a pre-made front-end app which allows users to upload their fav
 * Express
 * MongoDB
 * OWASP
-Run npm start, then nodemon server in order to start the server
 
 [External Front-End repository](https://github.com/OpenClassrooms-Student-Center/Web-Developer-P6)
 
@@ -45,6 +44,8 @@ Run npm start, then nodemon server in order to start the server
 >Attached: 
 >
 >    [Requirements](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Web%20Developer%20P6/EN%20P6_requirements.pdf)
+> <br>
+> <br>
 
 
 ### How to run:
