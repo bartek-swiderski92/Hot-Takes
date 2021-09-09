@@ -10,9 +10,9 @@ A secure API for a pre-made front-end app which allows users to upload their fav
 
 
 ### The project reviews following skills:
-* Implements a data model
-* Stores data securely using NoSQL
-* Enables users to interact with a database using CRUD operations
+* Implementing a data model
+* Storing data securely using NoSQL database
+* Enabling users to interact with a database using CRUD operations
 
 ### Technologies used:
 * Node.js
