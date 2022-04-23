@@ -59,9 +59,9 @@ A secure API for a pre-made front-end app which allows users to upload their fav
    npm start
    ```
 4. Download the [Back-end repository](https://github.com/bartek-swiderski92/Hot-Takes)
-5. Run npm start within the back-end directory
+5. Run npm install within the back-end directory
    ```
-   npm start
+   npm install
    ```
 6. Run nodemon server
    ```
