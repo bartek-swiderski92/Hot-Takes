@@ -1,8 +1,8 @@
-# **Sixth project in WebDeveloper path in OpenClassrooms.**
+# **Hot Takes**
 
 ## **Build a Secure API for a Review App**
 
-![image](https://raw.githubusercontent.com/phos23/BartoszSwiderski_6_29122020_A/main/hottakeslogo.png)  
+![image](https://github.com/bartek-swiderski92/Hot-Takes/blob/main/hottakeslogo.png?raw=true)  
 
 <br> 
 
@@ -58,7 +58,7 @@ A secure API for a pre-made front-end app which allows users to upload their fav
    ```
    npm start
    ```
-4. Download the [Back-end repository](https://github.com/phos23/BartoszSwiderski_6_29122020_A.git)
+4. Download the [Back-end repository](https://github.com/bartek-swiderski92/Hot-Takes)
 5. Run npm start within the back-end directory
    ```
    npm start
