@@ -15,10 +15,10 @@ A secure API for a pre-made front-end app which allows users to upload their fav
 * Enabling users to interact with a database using CRUD operations
 
 ### Technologies used:
-* Node.js
-* Express
-* MongoDB
-* OWASP
+<img src="https://img.shields.io/badge/node.js%20-%23339933.svg?&style=for-the-badge&logo=node.js&logoColor=white" />&nbsp;&nbsp;&nbsp;&nbsp; 
+<img src="https://img.shields.io/badge/Express-828282?style=for-the-badge&logo=express&logoColor=white" />&nbsp;&nbsp;&nbsp;&nbsp; 
+<img src="https://img.shields.io/badge/mongodb-51A349?style=for-the-badge&logo=mongodb&logoColor=white" />&nbsp;&nbsp;&nbsp;&nbsp; 
+<img src="https://img.shields.io/badge/owasp-black?style=for-the-badge&logo=owasp&logoColor=#EFEFEF">&nbsp;&nbsp;
 
 [External Front-End repository](https://github.com/OpenClassrooms-Student-Center/Web-Developer-P6)
 
