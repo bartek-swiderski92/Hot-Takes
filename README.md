@@ -1,9 +1,11 @@
-# **Hot Takes**
-
-## **Build a Secure API for a Review App**
 
 ![image](https://github.com/bartek-swiderski92/Hot-Takes/blob/main/hottakeslogo.png?raw=true)  
 
+## **Build a Secure API for a Review App**
+<img src="https://img.shields.io/badge/node.js%20-%23339933.svg?&style=for-the-badge&logo=node.js&logoColor=white" />&nbsp;&nbsp;&nbsp;&nbsp; 
+<img src="https://img.shields.io/badge/Express-828282?style=for-the-badge&logo=express&logoColor=white" />&nbsp;&nbsp;&nbsp;&nbsp; 
+<img src="https://img.shields.io/badge/mongodb-51A349?style=for-the-badge&logo=mongodb&logoColor=white" />&nbsp;&nbsp;&nbsp;&nbsp; 
+<img src="https://img.shields.io/badge/owasp-black?style=for-the-badge&logo=owasp&logoColor=#EFEFEF">&nbsp;&nbsp;
 <br> 
 
 A secure API for a pre-made front-end app which allows users to upload their favorite sauces, browse other sauces rate them. The back-end is made in Node.js and uses Express and MongoDB.
@@ -13,12 +15,6 @@ A secure API for a pre-made front-end app which allows users to upload their fav
 * Implementing a data model
 * Storing data securely using NoSQL database
 * Enabling users to interact with a database using CRUD operations
-
-### Technologies used:
-<img src="https://img.shields.io/badge/node.js%20-%23339933.svg?&style=for-the-badge&logo=node.js&logoColor=white" />&nbsp;&nbsp;&nbsp;&nbsp; 
-<img src="https://img.shields.io/badge/Express-828282?style=for-the-badge&logo=express&logoColor=white" />&nbsp;&nbsp;&nbsp;&nbsp; 
-<img src="https://img.shields.io/badge/mongodb-51A349?style=for-the-badge&logo=mongodb&logoColor=white" />&nbsp;&nbsp;&nbsp;&nbsp; 
-<img src="https://img.shields.io/badge/owasp-black?style=for-the-badge&logo=owasp&logoColor=#EFEFEF">&nbsp;&nbsp;
 
 [External Front-End repository](https://github.com/OpenClassrooms-Student-Center/Web-Developer-P6)
 
