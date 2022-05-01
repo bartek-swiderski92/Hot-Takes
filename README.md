@@ -10,6 +10,8 @@
 
 A secure API for a pre-made front-end app which allows users to upload their favorite sauces, browse other sauces rate them. The back-end is made in Node.js and uses Express and MongoDB.
 
+<img width=45% src="https://github.com/bartek-swiderski92/Hot-Takes/blob/main/snips/homepage.png?raw=true" />
+
 
 ### The project reviews following skills:
 * Implementing a data model
